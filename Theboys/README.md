@@ -1,6 +1,6 @@
 # 🌟 Projeto The Boys - Simulação de Heróis, Bases e Missões 🦸‍♂️🦸‍♀️
 
-Este projeto foi inspirado na série *The Boys* e visa simular um mundo repleto de heróis, bases e missões utilizando o conceito de **Simulação a Eventos Discretos (SED)**. Desenvolvido originalmente pelos professores **Fabiano Silva**, **Luis Bona** e **Marcos Castilho**, aqui apresentamos uma versão adaptada do projeto.
+Este projeto foi inspirado na série *The Boys* e visa simular um mundo repleto de heróis, bases e missões utilizando o conceito de **Simulação a Eventos Discretos (SED)**.
 
 ---
 
@@ -39,7 +39,7 @@ O projeto foi desenvolvido utilizando os seguintes conceitos e técnicas:
 
 4. **Algoritmos e Estruturas:**
    - Implementação de fila para gerenciar as filas de espera nas bases.
-   - Utilização de árvores ou listas ordenadas para a **LEF**.
+   - Utilização de listas ordenadas para a **LEF**.
    - Modelagem matemática para cálculo de distâncias entre bases e habilidades necessárias.
 
 ---
@@ -61,14 +61,74 @@ TENTATIVAS/MISSAO: MIN 1, MAX 21, MEDIA 2.08
 
 `Missões:` Taxa de sucesso, número de tentativas por missão e porcentagem de missões concluídas.
 
-## 🛠️ Estrutura do Código
+### 🧩 Estruturas do Código
 
-### 1. Módulos Principais
-Entidades:
+1. **Bibliotecas e Configurações Gerais**
+   - Inclui as bibliotecas necessárias, como `stdio.h`, `math.h` e outras.
+   - Define constantes globais importantes, como `T_FIM_DO_MUNDO` e `N_HABILIDADES`.
 
-heroi.c / heroi.h: Manipula os atributos dos heróis.
-base.c / base.h: Gerencia as bases, filas e heróis presentes.
-missao.c / missao.h: Define missões e verifica a aptidão de equipes.
+2. **Definições de Estruturas**
+   - Define as estruturas que representam as entidades principais:
+     - `heroi_t`: Estrutura de um herói, incluindo ID, paciência, habilidades, etc.
+     - `base_t`: Estrutura de uma base, com lotação, fila de espera, e localização.
+     - `missao_t`: Estrutura de uma missão, com habilidades requeridas e localização.
+     - `mundo_t`: Estrutura que engloba todas as entidades, incluindo heróis, bases e missões.
+
+3. **Funções Auxiliares**
+   - Funções que realizam tarefas gerais e cálculos, como:
+     - Geração de números aleatórios (`aleat`).
+     - Cálculo de distâncias.
+     - Ordenação de bases pela proximidade com missões.
+
+4. **Inicialização**
+   - Funções para criar e inicializar:
+     - Heróis: atribui paciência, habilidades e velocidade.
+     - Bases: define localização, lotação e cria filas de espera.
+     - Missões: configura habilidades e localizações aleatórias.
+     - Mundo: junta heróis, bases e missões.
+
+5. **Eventos**
+   - Funções que tratam os eventos do simulador, como:
+     - **CHEGA**: Quando um herói chega em uma base.
+     - **ESPERA**: Quando um herói entra na fila de espera.
+     - **DESISTE**: Quando um herói desiste de entrar na base e viaja para outra.
+     - **MISSAO**: Quando uma missão é disparada.
+     - **FIM**: Finaliza a simulação e gera relatórios.
+
+6. **Simulação**
+   - Funções principais que:
+     - Processam a Lista de Eventos Futuros (LEF).
+     - Atualizam o estado do mundo.
+     - Tratam eventos em sequência, como missões e movimentações.
+
+7. **Relatórios**
+   - Gera relatórios ao final da simulação:
+     - Estatísticas dos heróis (experiência, habilidades, etc.).
+     - Percentual de missões concluídas.
+     - Média de tentativas por missão.
+
+8. **Gerenciamento de Memória**
+   - Funções para destruir e liberar memória alocada:
+     - Liberação de heróis, bases e missões.
+     - Limpeza de filas e conjuntos.
+     - Finalização do mundo.
+
+## 🛠️ Fluxo do Programa
+
+1. **Inicialização**
+   - Configura heróis, bases e missões.
+   - Agenda eventos iniciais na Lista de Eventos Futuros (LEF).
+
+2. **Simulação**
+   - Processa eventos em ordem cronológica:
+     - Atualiza estado das entidades.
+     - Agrega novos eventos à LEF.
+
+3. **Finalização**
+   - Exibe resultados.
+   - Libera memória alocada.
+
+
 Simulação:
 simulacao.c / simulacao.h: Gerencia o relógio global e a execução da LEF.
 Eventos:
@@ -97,7 +157,7 @@ Vetores para armazenamento de heróis, bases e missões.
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/ricardobacano/Programação1/Theboys.git
+   git clone git@github.com:ricardobacano/Programação1.git
    ``` 
 
 2. Compile o projeto:
@@ -105,12 +165,12 @@ Vetores para armazenamento de heróis, bases e missões.
    make 
    ``` 
 3. Execute a simulação:
-
-bash
-Copiar código
-./simulacao
+   ```bash
+   ./theboys
+   ```
+   
 Opcional: Analise a execução com Valgrind:
+   ```bash
+   valgrind --leak-check=full ./theboys
+   ``` 
 
-bash
-Copiar código
-valgrind ./simulacao
