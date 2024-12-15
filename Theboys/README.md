@@ -128,12 +128,6 @@ TENTATIVAS/MISSAO: MIN 1, MAX 21, MEDIA 2.08
    - Exibe resultados.
    - Libera memória alocada.
 
-
-Simulação:
-simulacao.c / simulacao.h: Gerencia o relógio global e a execução da LEF.
-Eventos:
-eventos.c / eventos.h: Implementa os eventos como CHEGA, ESPERA, SAI, VIAJA e outros.
-
 ### 2. Funções Importantes
 
 Inicialização: Configuração inicial do mundo, heróis, bases e missões.
