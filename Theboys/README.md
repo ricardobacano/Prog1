@@ -151,19 +151,20 @@ Vetores para armazenamento de heróis, bases e missões.
 
 1. Clone o repositório:
    ```bash
-   git clone git@github.com:ricardobacano/Programação1.git
+   git@github.com:ricardobacano/Prog1.git
    ``` 
+2. Vá na pasta/diretório referente ao theboys
 
-2. Compile o projeto:
+3. Compile o projeto:
    ```bash
    make 
    ``` 
-3. Execute a simulação:
+4. Execute a simulação:
    ```bash
    ./theboys
    ```
    
-4. Analise a execução com Valgrind (opcional):
+5. Analise a execução com Valgrind (opcional):
    ```bash
    valgrind --leak-check=full ./theboys
    ``` 
