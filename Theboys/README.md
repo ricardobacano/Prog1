@@ -163,7 +163,7 @@ Vetores para armazenamento de heróis, bases e missões.
    ./theboys
    ```
    
-Opcional: Analise a execução com Valgrind:
+4. Analise a execução com Valgrind (opcional):
    ```bash
    valgrind --leak-check=full ./theboys
    ``` 
