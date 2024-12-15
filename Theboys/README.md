@@ -58,11 +58,12 @@ TENTATIVAS/MISSAO: MIN 1, MAX 21, MEDIA 2.08
 ``` 
 
 `Heróis:` Estatísticas de cada herói ao final da simulação, incluindo experiência acumulada e habilidades.
+
 `Missões:` Taxa de sucesso, número de tentativas por missão e porcentagem de missões concluídas.
 
 ## 🛠️ Estrutura do Código
 
-###1. Módulos Principais
+### 1. Módulos Principais
 Entidades:
 
 heroi.c / heroi.h: Manipula os atributos dos heróis.
@@ -84,3 +85,32 @@ Relatórios: Geração de relatórios ao final da simulação.
 Lista ordenada para LEF.
 Fila para heróis aguardando em bases.
 Vetores para armazenamento de heróis, bases e missões.
+
+## ⚙️ Como Executar
+
+### Pré-requisitos:
+- Compilador **C** (ex: `gcc`).
+- Sistema **Unix/Linux** recomendado.
+- Ferramenta de análise de memória como **Valgrind** para depuração.
+
+### Passos:
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/ricardobacano/Programação1/Theboys.git
+   ``` 
+
+2. Compile o projeto:
+   ```bash
+   make 
+   ``` 
+3. Execute a simulação:
+
+bash
+Copiar código
+./simulacao
+Opcional: Analise a execução com Valgrind:
+
+bash
+Copiar código
+valgrind ./simulacao
